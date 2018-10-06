@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000; //port configuration for heroku
 
 var app = express();
 
@@ -45,6 +46,6 @@ app.get('/about', (req , res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server is working!')
+app.listen(port, () => {
+    console.log(`server is working on port ${port}!`);
 });
